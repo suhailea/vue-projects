@@ -1,7 +1,7 @@
 <template>
   <form class="form">
     <div class="form-group">
-    <label for="exampleInputEmail1">first Name</label>
+    <label for="exampleInputEmail1">First Name</label>
     <input type="text" v-model="model.firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
