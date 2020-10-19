@@ -1,21 +1,23 @@
 <template>
-  <div id="app">
-   
-    <Navbar /> 
-    <Sidebar/>
-    <Form  @onSave="saveData"/>
-  </div>
+<div class="app">
+  <Navbar />
+<Sidebar />
+<Grid />
+
+</div>
+
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
-import Form from './components/Input.vue'
+import Grid from './components/Grid.vue'
+
 
 export default {
   name: 'App',
   components: {
-    Navbar,Sidebar,Form
+    Navbar,Sidebar,Grid
   },
   methods:{
     saveData(e){
