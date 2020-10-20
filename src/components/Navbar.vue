@@ -2,10 +2,11 @@
   <div class="navbar">
     <div class="navbar-items">  
      <ul>
-       <li><a href="">Home</a></li>
+       <router-link to="/test"><li><a href="">Home</a></li></router-link>
+       
        <li><a href="">About</a></li>
        <li><a href="">Services</a></li>
-       <li><a href="">Contacts</a></li>
+       <router-link to="/grid"><li><a href="">Employees</a></li></router-link>
      </ul>
   </div>
   </div>
@@ -19,7 +20,7 @@
 <style scoped>
 .navbar{
   position: relative;
-  width: 110%;
+  width: 100%;
   height: 66px;
   background: #042331;
 }
@@ -29,11 +30,13 @@
 .navbar ul{
   display: flex;
     position: relative;
-    left: 300%;
+    left: 200%;
+      text-decoration: none;
+
     bottom: 14px;
     text-decoration: none;
 }
-.navbar-items  ul  a{
+.navbar-items  ul li a{
   display: flex;
   line-height: 65px;
   font-size: 20px;
@@ -43,6 +46,6 @@
   text-align: center;
 }
 .navbar-items  ul a:hover{
-  color: blue;
+  background-color: black;
 }
 </style>

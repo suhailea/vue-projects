@@ -16,7 +16,16 @@
     <label for="exampleInputPassword1">password</label>
     <input type="password" class="form-control" v-model="model.password" id="exampleInputPassword1">
   </div>
-  <button type="submit" class="btn btn-primary" @click.prevent="submitForm()">Submit</button>
+  <div class="btn">
+    <router-link to="/app">
+        <button type="submit" class="btn btn-primary" @click.prevent="submitForm()" >Submit</button>
+    </router-link>
+    <router-link to="/app">
+        <button type="submit" class="btn btn-Danger"  >Cancel</button>
+  </router-link>
+
+  </div>
+  
 </form>
 
 </template>
@@ -54,7 +63,8 @@ export default {
     margin-left: 30%;
 }
 .btn{
-  margin-left: 30%;
+   margin-left: 30%; 
+   display: flex;
   
 }
 .check-box{

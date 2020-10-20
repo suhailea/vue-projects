@@ -1,10 +1,10 @@
 <template>
 <div class="grid">
-  <table class="table table-striped" >
+  <table class="table table-striped">
   <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
+    <tr>    
+      <th scope="col">#</th>     
+      <th scope="col">First</th >      
       <th scope="col">Last</th>
       <th scope="col">Handle</th>
     </tr>
@@ -12,30 +12,40 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
+       <router-link to="/input">
       <td>Mark</td>
+      </router-link>
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
     <tr>
       <th scope="row">2</th>
+       <router-link to="/input">
       <td>Jacob</td>
+      </router-link>
       <td>Thornton</td>
       <td>@fat</td>
     </tr>
     <tr>
       <th scope="row">3</th>
+       <router-link to="/input">
       <td>Larry</td>
+      </router-link>
       <td>the Bird</td>
       <td>@twitter</td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>Larry</td>
+       <router-link to="/input">
+      <td>Mark</td>
+      </router-link>
       <td>the Bird</td>
       <td>@twitter</td>
     </tr><tr>
       <th scope="row">5</th>
-      <td>Larry</td>
+       <router-link to="/input">
+      <td>Mark</td>
+      </router-link>
       <td>the Bird</td>
       <td>@twitter</td>
     </tr>
