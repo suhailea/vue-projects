@@ -1,64 +1,47 @@
 <template>
-<div class="grid">
-  <table class="table table-striped">
+ <div class="grid"><table class="table table-striped">
   <thead>
-    <tr>    
-      <th scope="col">#</th>     
-      <th scope="col">First</th >      
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+    <tr>
+      <th scope="col">Countries</th>
+      <th scope="col">Native Name</th>
+      <th scope="col">Region</th>
+      <th scope="col">Capital</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-       <router-link to="/input">
-      <td>Mark</td>
-      </router-link>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-       <router-link to="/input">
-      <td>Jacob</td>
-      </router-link>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-       <router-link to="/input">
-      <td>Larry</td>
-      </router-link>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-       <router-link to="/input">
-      <td>Mark</td>
-      </router-link>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr><tr>
-      <th scope="row">5</th>
-       <router-link to="/input">
-      <td>Mark</td>
-      </router-link>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <tr  v-for="item in list" v-bind:key="item.id">    
+      <td>{{item.name}}</td>
+      <td>{{item.nativeName}}</td>
+      <td>{{item.region}}</td>
+      <td>{{item.capital}}</td>
+    </tr> 
   </tbody>
-</table>
+</table> 
+
 </div>
+
 </template>
 
 <script>
-
+import vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+vue.use(VueAxios,axios)
 export default {
   name:'Grid',
-  
+  data(){
+    return{
+      list : undefined
+    }
+  },
+  mounted(){
+    vue.axios.get('https://restcountries.eu/rest/v2/all')
+    .then((resp) =>{
+      this.list = resp.data
+      console.warn(resp.data);
+    })
+  }
+ 
 }
 </script>
 <style scoped>
