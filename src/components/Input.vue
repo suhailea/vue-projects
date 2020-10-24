@@ -8,6 +8,15 @@
     <label for="exampleInputEmail1">Last name</label>
     <input type="text" class="form-control" v-model="model.lastName" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Country
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
+    <button class="dropdown-item" type="button" v-for="item in country" v-bind:key="item.id">{{item.name}}</button>   
+    
+  </div>
+</div>
   <div class="form-group">
     <label for="exampleInputEmail1">email </label>
     <input type="text" class="form-control" v-model="model.email" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -30,11 +39,17 @@
 
 </template>
 <script>
+import vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+vue.use(VueAxios,axios)
+
 export default {
   name:'Input',
   data(){
     return{
-      model:{}
+      model:{},
+      country: undefined
     }
   },
   methods:{
@@ -46,7 +61,15 @@ export default {
       // 1.the onSave function will be call in APP.vue file
       this.$emit('onSave', this.model)
     }
-  }
+  },
+  mounted() {
+      vue.axios.get('https://restcountries.eu/rest/v2/all')
+      .then((resp) =>{
+          this.country = resp.data
+          console.warn(resp.data)
+      })
+
+  },
 }
 </script>
 <style scoped>
