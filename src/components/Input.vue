@@ -10,7 +10,7 @@
   </div>
  <div class="form-group">
     <label for="exampleFormControlSelect1">Country</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="exampleFormControlSelect1" v-model="model.country">
       <option>Select Your Country</option>
       <option  v-for="item in country" v-bind:key="item.id">{{item.name}}</option>
     </select>
@@ -25,7 +25,7 @@
   </div>
   <div class="btn">
     <router-link to="/app">
-        <button type="submit" class="btn btn-primary" @click.prevent="submitForm()" >Submit</button>
+        <button type="submit" class="btn btn-primary" @click.prevent="submitForm()">Submit</button>
     </router-link>
     <router-link to="/app">
         <button type="submit" class="btn btn-Danger"  >Cancel</button>

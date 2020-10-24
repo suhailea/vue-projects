@@ -5,8 +5,8 @@
        <router-link to="/test"><li><a href="">Home</a></li></router-link>
        
        <li><a href="">About</a></li>
-       <li><a href="">Services</a></li>
-       <router-link to="/grid"><li><a href="">Employees</a></li></router-link>
+       <router-link to="/input"><li><a href="">Register</a></li></router-link>
+       <router-link to="/grid"><li><a href="">Countries</a></li></router-link>
      </ul>
   </div>
   </div>
