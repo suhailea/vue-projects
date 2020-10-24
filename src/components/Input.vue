@@ -8,14 +8,6 @@
     <label for="exampleInputEmail1">Last name</label>
     <input type="text" class="form-control" v-model="model.lastName" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Country
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
-    <button class="dropdown-item" type="button" ></button>    
-  </div>
-</div>
  <div class="form-group">
     <label for="exampleFormControlSelect1">Country</label>
     <select class="form-control" id="exampleFormControlSelect1">
