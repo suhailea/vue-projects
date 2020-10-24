@@ -1,8 +1,9 @@
 <template>
 <div class="app">
-  <Navbar />
+   <Navbar />
     <Sidebar />
-    <!-- <Grid />   -->
+    <!-- <Input />
+    <Grid />   --> -->
   <router-view></router-view>
   
 
@@ -11,15 +12,17 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
-import Sidebar from './components/Sidebar.vue'
+ import Navbar from './components/Navbar.vue'
+ import Sidebar from './components/Sidebar.vue'
+// import Input from './components/Input.vue'
+
 //  import Grid from './components/Grid.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Navbar,Sidebar
+     Navbar,Sidebar
   },
   methods:{
     saveData(e){
