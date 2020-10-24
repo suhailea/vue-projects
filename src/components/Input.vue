@@ -13,10 +13,16 @@
     Country
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
-    <button class="dropdown-item" type="button" v-for="item in country" v-bind:key="item.id">{{item.name}}</button>   
-    
+    <button class="dropdown-item" type="button" ></button>    
   </div>
 </div>
+ <div class="form-group">
+    <label for="exampleFormControlSelect1">Country</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Select Your Country</option>
+      <option  v-for="item in country" v-bind:key="item.id">{{item.name}}</option>
+    </select>
+  </div>
   <div class="form-group">
     <label for="exampleInputEmail1">email </label>
     <input type="text" class="form-control" v-model="model.email" id="exampleInputEmail1" aria-describedby="emailHelp">
