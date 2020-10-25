@@ -13,7 +13,7 @@
       v-model="input.password"
       placeholder="password"
     />
-    <button type="button" v-on:click="login()">Login</button>
+    <button type="button" @click="login()">Login</button>
   </div>
 </template>
 
@@ -23,21 +23,18 @@ export default {
   data() {
     return {
       input: {
-        name: "admin",
-        password: "admin",
+        username: "",
+        password: "",
       },
     };
   },
   methods: {
     login() {
       if (this.input.username == "admin" && this.input.password == "admin") {
-        this.$store.commit("setAuthentication", true)
-        this.$router.replace({name: 'grid'})
-        // localStorage.setItem("isAuth", true)
-        //  localStorage.removeItem('isAuth')
-        
+        this.$store.commit("setAuthentication", true);
+        this.$router.replace({ name: "grid" });
       } else {
-        console.log("The Username or password is Invalid");
+        //console.log("The username and / or password is incorrect");
       }
     },
   },
