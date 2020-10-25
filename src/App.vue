@@ -1,37 +1,28 @@
 <template>
-<div class="app">
-   <Navbar />
+  <div class="app">
+    <Navbar />
     <Sidebar />
-    <!-- <Input />
-    <Grid />   --> -->
-  <router-view></router-view>
-  
-
-</div>
-
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
- import Navbar from './components/Navbar.vue'
- import Sidebar from './components/Sidebar.vue'
-// import Input from './components/Input.vue'
-
-//  import Grid from './components/Grid.vue'
-
+import Navbar from "./components/Navbar.vue";
+import Sidebar from "./components/Sidebar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-     Navbar,Sidebar
+    Navbar,
+    Sidebar,
   },
-  methods:{
-    saveData(e){
-      console.log(e)
-    }
-  }
-}
+  methods: {
+    saveData(e) {
+      console.log(e);
+    },
+  },
+};
 </script>
 
 <style>
-
 </style>

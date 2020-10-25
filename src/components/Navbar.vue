@@ -7,6 +7,7 @@
        <li><a href="">About</a></li>
        <router-link to="/input"><li><a href="">Register</a></li></router-link>
        <router-link to="/grid"><li><a href="">Countries</a></li></router-link>
+        <router-link to="/login"><li><a href="">Login</a></li></router-link>
      </ul>
   </div>
   </div>
@@ -14,7 +15,12 @@
 
 <script>
   export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    data() {
+      return {
+        isAuth:localStorage.getItem('isAuth')
+      }
+    },
   }
 </script>
 <style scoped>
@@ -29,12 +35,11 @@
 }
 .navbar ul{
   display: flex;
-    position: relative;
-    left: 200%;
-      text-decoration: none;
-
-    bottom: 14px;
-    text-decoration: none;
+  position: relative;
+  left: 200%;
+  text-decoration: none;
+  bottom: 14px;
+  text-decoration: none;
 }
 .navbar-items  ul li a{
   display: flex;

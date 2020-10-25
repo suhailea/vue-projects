@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import Login from './components/Login.vue'
 import Grid from './components/Grid.vue'
+import Input from './components/Input.vue'
+
 
 Vue.config.productionTip = false
 
@@ -47,11 +49,23 @@ const router = new VueRouter({
           next();
         }
       }
-    }
+    },
+    {
+      path:'/input',
+      name:'input',
+      component:Input,
+      beforeEnter:(to, from, next) =>{
+        if(Store.state.authenticated == false){
+          next(false)
+        }else{
+          next();
+        }
+      }
+    },
   ]
 })
 new Vue({  
-  Store : Store,
+   Store : Store,
   router : router,
   render: h => h(App),
 }).$mount('#app')
